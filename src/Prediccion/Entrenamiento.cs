@@ -26,13 +26,9 @@ namespace DISTO_DMH_SW2
             List<float[]> listaSalidasEsperadas;
             List<float[]> listaSalidasObtenidas;
             List<string> listaDatasetEntrenamiento = cargarDatosEntrenamiento();
-            float errorPromedioDataSet = 1;
+            float errorPromedioDataSet = 90;
             for (int epoca = 1; epoca <= cantidadEpocas && errorPromedioDataSet > errorMinimo; epoca++)
             {//iterar por epocas
-                if ((epoca == cantidadEpocas && errorPromedioDataSet > 0.3) || (errorPromedioDataSet > 60))
-                {
-                    Entrenar(registroVectores);
-                }
                 errorPromedioDataSet = 0;
                 Console.WriteLine("-------------------Epoca:" + epoca + "----------------------");
                 foreach (string oracion in listaDatasetEntrenamiento)
@@ -68,6 +64,12 @@ namespace DISTO_DMH_SW2
                 }
                 errorPromedioDataSet = errorPromedioDataSet / listaDatasetEntrenamiento.Count; // promedio de error del dataset
                 Console.WriteLine("Error Promedio Dataset:" + errorPromedioDataSet);
+                if ((epoca == cantidadEpocas && errorPromedioDataSet > 0.4) || (errorPromedioDataSet != 30))
+                {
+                    Console.WriteLine("RESET");
+                    GRU = new RedNeuronalRecurrente(false, 300, 300);
+                    Entrenar(registroVectores);
+                }
             }
             guardarRed(GRU);
         }
