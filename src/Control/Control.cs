@@ -7,7 +7,7 @@ namespace DISTO_DMH_SW2
         private RegistroVectores registroVectores;
         private RedNeuronalRecurrente GRU;
         private Entrenamiento entrenamiento;
-        private Boolean cargarRed = false; // false para empezar una red de 0
+        private Boolean cargarRed = true; // false para empezar una red de 0
         public Control()
         {
             registroVectores = new RegistroVectores();
@@ -21,29 +21,27 @@ namespace DISTO_DMH_SW2
         public void predecir()
         {
             char op = ' ';
-            string a = " ";
+            string a = "";
             do
             {
-                Console.Clear();
-                Console.WriteLine("Este es un prototipo de prueba del software DISTO-DMH");
                 Console.WriteLine("Seleccione una opcion:");
                 Console.WriteLine("1.. Prueba de prediccion");
-                Console.WriteLine("0.. Iniciar Prueba de prediccion");
+                Console.WriteLine("0.. salir de la prueba");
                 op = Console.ReadKey().KeyChar;
                 switch (op)
                 {
                     case '1': //Ingresar frase
                         float[] vectorSalida = { };
-                        Console.Clear();
                         Console.WriteLine("Ingrese una frase:");
                         a = Console.ReadLine();
                         string[] oracionSplit = a.Split();
-                        for (int i = 0; i < oracionSplit.Length - 1; i++)
+                        for (int i = 0; i <= oracionSplit.Length - 1; i++)
                         {
                             vectorSalida = GRU.feedForward(registroVectores.getVector(oracionSplit[i]));
                         }
                         string palabra = registroVectores.getPalabra(registroVectores.getVector(Array.IndexOf(vectorSalida, vectorSalida.Max())));
                         Console.WriteLine("El sistema dice: " + palabra);
+                        Console.WriteLine("");
                         break;
                     default:
                         Console.WriteLine("Opcion invalida");

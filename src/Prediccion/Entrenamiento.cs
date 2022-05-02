@@ -12,7 +12,7 @@ namespace DISTO_DMH_SW2
         private FuncionesActivacion funciones = new FuncionesActivacion();
         private RedNeuronalRecurrente GRU;
         private RedNeuronalRecurrente GRUaux;
-        private const float factorApendizaje = 0.03f;
+        private const float factorApendizaje = 0.001f;
         private const float errorMinimo = 0.2f;
         private const int cantidadEpocas = 200;
         public Entrenamiento(RedNeuronalRecurrente G)
@@ -64,10 +64,10 @@ namespace DISTO_DMH_SW2
                 }
                 errorPromedioDataSet = errorPromedioDataSet / listaDatasetEntrenamiento.Count; // promedio de error del dataset
                 Console.WriteLine("Error Promedio Dataset:" + errorPromedioDataSet);
-                if ((epoca == cantidadEpocas && errorPromedioDataSet > 0.4) || (errorPromedioDataSet != 30))
+                if ((epoca == cantidadEpocas && errorPromedioDataSet > 0.6) || (errorPromedioDataSet > 50))
                 {
                     Console.WriteLine("RESET");
-                    GRU = new RedNeuronalRecurrente(false, 300, 300);
+                    GRU = new RedNeuronalRecurrente(true, 300, 300);
                     Entrenar(registroVectores);
                 }
             }

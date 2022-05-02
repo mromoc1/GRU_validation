@@ -6,7 +6,7 @@ namespace DISTO_DMH_SW2
         public static void Main(string[] args)
         {
             Control control = new Control();
-            char op = ' ';
+            String op = "";
             do
             {
                 // System.Console.Clear();
@@ -15,14 +15,14 @@ namespace DISTO_DMH_SW2
                 Console.WriteLine("1.. Entrenar");
                 Console.WriteLine("2.. Iniciar Prueba de prediccion");
                 Console.WriteLine("3.. Salir");
-                op = '1';
+                op = Console.ReadLine();
                 switch (op)
                 {
-                    case '1':
-                        // Console.Clear();
+                    case "1":
+                        Console.Clear();
                         control.entrenarSistema();
                         break;
-                    case '2':
+                    case "2":
                         Console.Clear();
                         control.predecir();
                         break;
@@ -30,7 +30,7 @@ namespace DISTO_DMH_SW2
                         Console.WriteLine("Opcion invalida");
                         break;
                 }
-            } while (op != '3');
+            } while (op != "3");
         }
     }
 }

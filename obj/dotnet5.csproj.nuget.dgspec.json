@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mromo\\OneDrive\\Escritorio\\dotnet5\\dotnet5.csproj": {}
+    "C:\\Users\\mromo\\OneDrive\\Escritorio\\workspace\\GRU_validation\\dotnet5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mromo\\OneDrive\\Escritorio\\dotnet5\\dotnet5.csproj": {
+    "C:\\Users\\mromo\\OneDrive\\Escritorio\\workspace\\GRU_validation\\dotnet5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mromo\\OneDrive\\Escritorio\\dotnet5\\dotnet5.csproj",
+        "projectUniqueName": "C:\\Users\\mromo\\OneDrive\\Escritorio\\workspace\\GRU_validation\\dotnet5.csproj",
         "projectName": "dotnet5",
-        "projectPath": "C:\\Users\\mromo\\OneDrive\\Escritorio\\dotnet5\\dotnet5.csproj",
+        "projectPath": "C:\\Users\\mromo\\OneDrive\\Escritorio\\workspace\\GRU_validation\\dotnet5.csproj",
         "packagesPath": "C:\\Users\\mromo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mromo\\OneDrive\\Escritorio\\dotnet5\\obj\\",
+        "outputPath": "C:\\Users\\mromo\\OneDrive\\Escritorio\\workspace\\GRU_validation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mromo\\AppData\\Roaming\\NuGet\\NuGet.Config"
