@@ -1,5 +1,5 @@
 # GRU_validation
-Repositorio en el que se pretende comparar el resultado del algoriutmo red neuronal GRU (Gated Recurrent Unit) codificado en C#, Python, WEKA, entre otros a definir.
+Repositorio en el que se pretende comparar el resultado o precision del algoritmo red neuronal GRU (Gated Recurrent Unit) y LSTM (Long Short Term Memory) codificado en C#, Python, WEKA, entre otros a definir.
 
 # Ramas
 Cada desarrollo de red neuronal se realizara en una rama de este repositorio con el objetivo de no tener repositorios dispersos o individuales.
